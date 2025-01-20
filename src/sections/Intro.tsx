@@ -3,12 +3,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { FC } from "react";
 import bookImage from "@/assets/images/JewelARy.png";
 import Image from "next/image";
-import JavascriptIcon from "@/assets/icons/square-js.svg";
-import HTMLIcon from "@/assets/icons/html5.svg";
-import CssIcon from "@/assets/icons/css3.svg";
-import ReactIcon from "@/assets/icons/react.svg";
-import ChromeIcon from "@/assets/icons/chrome.svg";
-import GithubIcon from "@/assets/icons/github.svg";
+
 
 const toolboxItems = [
   {
