@@ -155,7 +155,7 @@ const Intro: FC = () => {
               </svg>
               <h3>Beyond the Code</h3>
               <p>
-                Explore my interests and hobbies beyond the digital realm.
+                Explore my interests and hobbies beyond the digital realm!
               </p>
             </div>
           </ReCard>
