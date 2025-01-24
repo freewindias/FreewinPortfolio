@@ -2,7 +2,7 @@ import { ReCard } from "@/components/ReCard";
 import { SectionHeader } from "@/components/SectionHeader";
 import { FC } from "react";
 import bookImage from "@/assets/images/JewelARy.png";
-import mapImage from "@/assets/images/mAp1.png"
+import mapImage from "@/assets/images/mAp1.png";
 import Image from "next/image";
 
 const toolboxItems = [
@@ -80,6 +80,42 @@ const toolboxItems = [
   },
 ];
 
+const hobbies = [
+  {
+    title: "Gaming",
+    emoji: "🎮",
+  },
+  {
+    title: "Music",
+    emoji: "🎧",
+  },
+  {
+    title: "Fitness",
+    emoji: "🏋🏽",
+  },
+  {
+    title: "Travelling",
+    emoji: "🗺️",
+  },
+  {
+    title: "Football",
+    emoji: "⚽️",
+  },
+  {
+    title: "Photography",
+    emoji: "📸",
+  },
+];
+
+const certificates = [
+  {
+    title: 'HTML & HTML5 Mastery by Udemy'
+  },
+  {
+    title: 'Python by Kaggle'
+  },
+];
+
 const Intro: FC = () => {
   return (
     <div className="py-24">
@@ -105,6 +141,7 @@ const Intro: FC = () => {
                 />
               </svg>
               <h3>Research Paper</h3>
+              <p>Exploring new horizons in Jewellery E-Commerce App using Augmented Reality through published research.</p>
             </div>
             <Image src={bookImage} alt="research Paper" />
           </ReCard>
@@ -154,13 +191,65 @@ const Intro: FC = () => {
                 />
               </svg>
               <h3>Beyond the Code</h3>
-              <p>
-                Explore my interests and hobbies beyond the digital realm!
-              </p>
+              <p>Explore my interests and hobbies beyond the digital realm!</p>
+            </div>
+            <div>
+              {hobbies.map((hobby) => (
+                <div key={hobby.title}>
+                  <span>{hobby.title}</span>
+                  <span>{hobby.emoji}</span>
+                </div>
+              ))}
             </div>
           </ReCard>
           <ReCard>
-              <Image src={mapImage} alt="map" />
+            <Image src={mapImage} alt="map" />
+          </ReCard>
+          <ReCard>
+            <div>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1C12 1 12 8 10 10C8 12 1 12 1 12C1 12 8 12 10 14C12 16 12 23 12 23C12 23 12 16 14 14C16 12 23 12 23 12C23 12 16 12 14 10C12 8 12 1 12 1Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <h3>Resume</h3>
+              <p>Building the future, one project at a time.</p>
+            </div>
+            <Image src={bookImage} alt="research Paper" />
+          </ReCard>
+          <ReCard>
+            <div>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 1C12 1 12 8 10 10C8 12 1 12 1 12C1 12 8 12 10 14C12 16 12 23 12 23C12 23 12 16 14 14C16 12 23 12 23 12C23 12 16 12 14 10C12 8 12 1 12 1Z"
+                  fill="currentColor"
+                />
+              </svg>
+              <h3>My Certificates</h3>
+              <p>
+                Bringing certified development skills to every project.
+              </p>
+            </div>
+            <div>
+              {certificates.map((certi) => (
+                <div key={certi.title}>
+                  <span>{certi.title}</span>
+                </div>
+              ))}
+            </div>
           </ReCard>
         </div>
       </div>
