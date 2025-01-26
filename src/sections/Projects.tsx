@@ -9,15 +9,15 @@ import Image from "next/image";
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 const projects = [
   {
-    name: "Artisan Brew Co.",
+    name: "rodias.in",
     image: image1,
   },
   {
-    name: "Wavelength Studios",
+    name: "i-fineart.com",
     image: image2,
   },
   {
-    name: "Nova Fitness",
+    name: "jewelARy.rodias.in",
     image: image3,
   },
   {
