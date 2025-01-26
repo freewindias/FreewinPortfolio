@@ -20,14 +20,6 @@ const projects = [
     name: "jewelARy.rodias.in",
     image: image3,
   },
-  {
-    name: "Urban Plates",
-    image: image4,
-  },
-  {
-    name: "Bloom Botanicals",
-    image: image5,
-  },
 ];
 
 const Projects: FC = () => {
