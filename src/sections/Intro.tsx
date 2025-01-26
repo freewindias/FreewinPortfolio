@@ -1,8 +1,9 @@
 import { ReCard } from "@/components/ReCard";
 import { SectionHeader } from "@/components/SectionHeader";
 import { FC } from "react";
-import bookImage from "@/assets/images/JewelARy.png";
+import bookImage from "@/assets/images/book-cover.png";
 import mapImage from "@/assets/images/mAp1.png";
+import smileMemoji from "@/assets/images/memoji-smile.png";
 import Image from "next/image";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolBoxItems } from "@/components/ToolBoxItems";
@@ -140,41 +141,63 @@ const hobbies = [
   {
     title: "Gaming",
     emoji: "🎮",
+    left: "1%",
+    top: "10%",
   },
   {
     title: "Music",
     emoji: "🎧",
+    left: "40%",
+    top: "-3%",
   },
   {
     title: "Fitness",
     emoji: "🏋🏽",
+    left: "5%",
+    top: "35%",
   },
   {
     title: "Travelling",
     emoji: "🗺️",
+    left: "50%",
+    top: "45%",
   },
   {
     title: "Football",
     emoji: "⚽️",
+    left: "10%",
+    top: "60%",
   },
   {
     title: "Photography",
     emoji: "📸",
+    left: "30%",
+    top: "80%",
+  },
+  {
+    title: "Reading",
+    emoji: "📚",
+    left: "60%",
+    top: "20%",
   },
 ];
 
 const certificates = [
   {
     title: "HTML & HTML5 Mastery by Udemy",
+    left: "2%",
+    top: "-5%",
   },
   {
     title: "Python by Kaggle",
+    left: "2%",
+    top: "21%",
   },
 ];
 
 const Intro: FC = () => {
   return (
-    <div className="py-20">
+    <div className="py-20 lg:py-28">
       <div className="container">
         <SectionHeader
           eyebrow="About Me"
@@ -182,61 +205,125 @@ const Intro: FC = () => {
           description="Learn more about who I am, what I do, and what inspires me"
         />
         <div className="mt-20 flex flex-col gap-8">
-          <ReCard className="h-[320px]">
-            <CardHeader
-              title="Resume"
-              description="Building the future, one project at a time."
-            />
-            <div className="w-70 mx-auto mt-4">
-              <Image src={bookImage} alt="research Paper" className="m-0 p-0"/>
-            </div>
-          </ReCard>
-          <ReCard className="h-[320px] p-0">
-            <CardHeader
-              title="My Toolbox"
-              description="Explore the technologies and tools I use to craft exceptional digital experiences."
-              className="px-6 pt-6"
-            />
-            <ToolBoxItems items={toolboxItems} className="mt-6 " />
-            <ToolBoxItems items={toolboxItems} className="mt-6" itemsWrapperClassName="-translate-x-1/2" />
-          </ReCard>
-          <ReCard>
-            <CardHeader
-              title="Beyond the Code"
-              description="Explore my interests and hobbies beyond the digital realm!"
-            />
-            <div>
-              {hobbies.map((hobby) => (
-                <div key={hobby.title}>
-                  <span>{hobby.title}</span>
-                  <span>{hobby.emoji}</span>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
+            <ReCard className="h-[320px] md:col-span-2 lg:col-span-1">
+              <CardHeader
+                title="Resume"
+                description="Building the future, one project at a time"
+              />
+              <div className="w-40 mx-auto mt-2 md:mt-0">
+                <Image
+                  src={bookImage}
+                  alt="research Paper"
+                  className="m-0 p-0"
+                />
+              </div>
+            </ReCard>
+            <ReCard className="h-[320px] md:col-span-3 lg:col-span-2">
+              <CardHeader
+                title="My Toolbox"
+                description="Explore the technologies and tools I use to craft exceptional digital experiences."
+                className=""
+              />
+              <ToolBoxItems items={toolboxItems} className="" />
+              <ToolBoxItems
+                items={toolboxItems}
+                className="mt-6"
+                itemsWrapperClassName="-translate-x-1/2"
+              />
+            </ReCard>
+          </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
+            <ReCard className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
+              <CardHeader
+                title="Beyond the Code"
+                description="Explore my interests and hobbies beyond the digital realm!"
+                className="px-6 py-6"
+              />
+              <div className="relative flex-1">
+                {hobbies.map((hobby) => (
+                  <div
+                    key={hobby.title}
+                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-orange-500 to-red-500 rounded-full py-1.5 absolute"
+                    style={{
+                      left: hobby.left,
+                      top: hobby.top,
+                    }}
+                  >
+                    <span className="font-medium text-white">
+                      {hobby.title}
+                    </span>
+                    <span>{hobby.emoji}</span>
+                  </div>
+                ))}
+              </div>
+            </ReCard>
+            <ReCard className="h-[320px] p-0 relative md:col-span-2 lg:col-span-1">
+              <Image
+                src={mapImage}
+                alt="map"
+                className="h-full w-full object-cover object-left-top"
+              />
+              <div className="absolute top-1/2 left-36 -translate-x-1/2 -translate-y-24 size-20 rounded-full bg-gradient-to-r from-orange-500 to-red-500 after:content-[''] after:absolute after:inset-0 after:outline after:outline-2 after:-outline-offset-2 after:rounded-full after:outline-gray-950/30">
+                <Image src={smileMemoji} alt="myself" className="size-20" />
+              </div>
+            </ReCard>
+          </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
+            <ReCard className="h-[320px] md:col-span-2 lg:col-span-1">
+              <div className="flex flex-col p-6 md:py-8 md:px-2 lg:px-10">
+                <div className="inline-flex items-center gap-1 lg:gap-2">
+                  <svg
+                    className="size-9 text-red-orange-500"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 1C12 1 12 8 10 10C8 12 1 12 1 12C1 12 8 12 10 14C12 16 12 23 12 23C12 23 12 16 14 14C16 12 23 12 23 12C23 12 16 12 14 10C12 8 12 1 12 1Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <h3 className="font-serif text-3xl">Research Paper</h3>
                 </div>
-              ))}
-            </div>
-          </ReCard>
-          <ReCard>
-            <Image src={mapImage} alt="map" />
-          </ReCard>
-          <ReCard>
-            <CardHeader
-              title="Research Paper"
-              description="Exploring new horizons in Jewellery E-Commerce App using Augmented Reality through published research."
-            />
-            <Image src={bookImage} alt="research Paper" />
-          </ReCard>
-          <ReCard>
-            <CardHeader
-              title="My Certificates"
-              description="Bringing certified development skills to every project."
-            />
-            <div>
-              {certificates.map((certi) => (
-                <div key={certi.title}>
-                  <span>{certi.title}</span>
-                </div>
-              ))}
-            </div>
-          </ReCard>
+                <p className="text-sm text-black/70 mt-2 lg:text-base max-w-sm md:ml-3 lg:ml-0">
+                  Research that bridges theory and real-world impact.
+                </p>
+              </div>
+              <div className="w-40 mx-auto mt-2 md:mt-0">
+                <Image
+                  src={bookImage}
+                  alt="research Paper"
+                  className="m-0 p-0"
+                />
+              </div>
+            </ReCard>
+            <ReCard className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
+              <CardHeader
+                title="My Certificates"
+                description="Bringing certified development skills to every project."
+                className="px-6 py-6"
+              />
+              <div className="relative flex-1">
+                {certificates.map((certi) => (
+                  <div
+                    key={certi.title}
+                    className="inline-flex items-center gap-2 px-6 bg-gradient-to-r from-orange-500 to-red-500 rounded-full py-1.5 absolute"
+                    style={{
+                      left: certi.left,
+                      top: certi.top,
+                    }}
+                  >
+                    <span className="font-medium text-white">
+                      {certi.title}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </ReCard>
+          </div>
         </div>
       </div>
     </div>
