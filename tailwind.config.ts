@@ -21,8 +21,8 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
-        'red-orange': {
-          500: 'color-mix(in srgb, theme("colors.red.500") 50%, theme("colors.orange.500") 50%)'
+        "red-orange": {
+          500: 'color-mix(in srgb, theme("colors.red.500") 50%, theme("colors.orange.500") 50%)',
         },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -71,6 +71,35 @@ const config: Config = {
           DEFAULT: "1rem",
           md: "2rem",
           lg: "4rem",
+        },
+      },
+      animation: {
+        "ping-large": "ping-large 1s ease-in-out infinte",
+        "move-left": "move-left 1s linear infinite",
+        "move-right": "move-right 1s linear infinite",
+      },
+      keyframes: {
+        "ping-large": {
+          "75%, 100%": {
+            transform: "scale(3)",
+            opacity: "0",
+          },
+        },
+        "move-left": {
+          "0%": {
+            transform: "translateX(0%)",
+          },
+          "100%": {
+            transform: "translate(-50%)",
+          },
+        },
+        "move-right": {
+          "0%": {
+            transform: "translateX(-50%)",
+          },
+          "100%": {
+            transform: "translate(0%)",
+          },
         },
       },
     },
